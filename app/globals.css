@@ -6,6 +6,19 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --gradient-color: linear-gradient(90deg,
+      hsl(276, 100%, 50%) 0%,
+      hsl(273, 100%, 41%));
+  --black-color: hsl(225, 15%, 6%);
+  --reflection-color: hsla(48, 30%, 95%, .3);
+  --body-color: hsl(48, 100%, 98%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --normal-font-size: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,12 +29,251 @@
   }
 }
 
+@font-face {
+  font-family: 'ClashBold';
+  src: url('../public/fonts/ClashDisplay-Bold.otf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashRegular';
+  src: url('../public/fonts/ClashDisplay-Regular.otf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashMedium';
+  src: url('../public/fonts/ClashDisplay-Medium.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashSemiBold';
+  src: url('../public/fonts/ClashDisplay-Semibold.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+#meet:hover {
+  scale: 1.1;
+  transition-duration: 300ms;
+}
+
+/*=============== BUTTON ===============*/
+.button_container {
+  display: grid;
+}
+
+.button {
+  position: relative;
+  transition: transform .4s;
+}
+
+.button__content {
+  position: relative;
+  background: var(--gradient-color);
+  padding: 0.55rem 1.55rem;
+  border-radius: 4rem;
+  border: 1px solid var(--black-color);
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  overflow: hidden;
+}
+
+.button__text {
+  font-weight: 800;
+  color: var(--body-color);
+  letter-spacing: 0.75px;
+}
+
+.button__icon {
+  font-size: 1rem;
+}
+
+.button__text,
+.button__icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* Reflection shapes */
+.button__reflection-1,
+.button__reflection-2 {
+  width: 8px;
+  height: 120px;
+  background-color: var(--reflection-color);
+  rotate: 30deg;
+  position: absolute;
+  inset: 0;
+  top: 0;
+  left: -180%;
+  margin: auto;
+  transition: left .6s cubic-bezier(.2, .5, .2, 1.2);
+}
+
+.button__reflection-1::after {
+  content: "";
+  width: 26px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: 1.25rem;
+}
+
+.button__reflection-2::after {
+  content: "";
+  width: 40px;
+  height: 100%;
+  background-color: var(--reflection-color);
+  position: absolute;
+  top: -1rem;
+  left: .8rem;
+}
+
+/* Moving geometric shapes */
+.button img {
+  position: absolute;
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+}
+
+.button__star-1 {
+  width: 15px;
+  /* smaller size */
+  top: 6px;
+  /* adjusted position */
+  left: 1px;
+  /* adjusted position */
+  transform: rotate(48deg) scale(.1);
+}
+
+.button__star-2 {
+  width: 30px;
+  /* smaller size */
+  right: -10px;
+  /* adjusted position */
+  top: 1px;
+  /* adjusted position */
+  transform: rotate(-48deg) scale(.1);
+}
+
+.button__circle-1,
+.button__circle-2 {
+  width: 8px;
+  /* smaller size */
+}
+
+.button__circle-1 {
+  top: 10px;
+  /* adjusted position */
+  left: 40px;
+  /* adjusted position */
+  transform: scale(.1);
+}
+
+.button__circle-2 {
+  right: 30px;
+  /* adjusted position */
+  bottom: 20px;
+  /* adjusted position */
+  transform: scale(.1);
+}
+
+.button__diamond {
+  width: 12px;
+  /* smaller size */
+  top: -10px;
+  /* adjusted position */
+  right: 40px;
+  /* adjusted position */
+  transform: scale(.1);
+}
+
+.button__triangle {
+  width: 15px;
+  /* smaller size */
+  left: 30px;
+  /* adjusted position */
+  bottom: 0px;
+  /* adjusted position */
+  transform: rotate(-48deg) scale(.1);
+}
+
+/* Gradient shadow */
+.button__shadow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--gradient-color);
+  padding: 1rem 2rem;
+  border-radius: 4rem;
+  border: 1px solid var(--black-color);
+  z-index: -1;
+  transition: transform .3s;
+}
+
+/* View shadow gradient */
+.button:hover .button__shadow {
+  transform: translate(-.5rem, .5rem);
+}
+
+/* Move reflection */
+.button:hover .button__reflection-1 {
+  left: 120%;
+}
+
+.button:hover .button__reflection-2 {
+  left: -70%;
+}
+
+/* View geometric shapes */
+.button:hover {
+  transform: rotate(-4deg) scale(1.1);
+}
+
+.button:hover img {
+  opacity: 1;
+}
+
+.button:hover .button__star-1 {
+  transform: scale(1);
+  transition-delay: .1s;
+}
+
+.button:hover .button__star-2 {
+  transform: scale(1);
+}
+
+.button:hover .button__circle-1 {
+  transform: translateY(-8px) scale(1);
+  transition-delay: .1s;
+}
+
+.button:hover .button__circle-2 {
+  transform: translate(-20px, 20px) scale(1);
+}
+
+.button:hover .button__diamond {
+  transform: translateY(7px) rotate(-24deg) scale(1);
+}
+
+.button:hover .button__triangle {
+  transform: rotate(-12deg) scale(1);
 }

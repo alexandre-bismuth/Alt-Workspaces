@@ -12,7 +12,21 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'main-purple': '#4517FE',
+      },
+      fontFamily: {
+        ClashBold: ['ClashBold', 'sans-serif'],
+        ClashSemiBold: ['ClashSemiBold', 'sans-serif'],
+        ClashMedium: ['ClashMedium', 'sans-serif'],
+        ClashRegular: ['ClashRegular', 'sans-serif'],
+      },
     },
   },
+  variants: {
+    extend: {
+      transform: ['hover', 'focus'],
+    },
   plugins: [],
+  },
 }
