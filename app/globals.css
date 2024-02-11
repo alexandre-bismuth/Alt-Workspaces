@@ -57,6 +57,48 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'InterLight';
+  src: url('../public/fonts/Inter-Light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterThin';
+  src: url('../public/fonts/Inter-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterMedium';
+  src: url('../public/fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterRegular';
+  src: url('../public/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterSemiBold';
+  src: url('../public/fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'InterBold';
+  src: url('../public/fonts/Inter-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);

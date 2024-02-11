@@ -20,6 +20,12 @@ module.exports = {
         ClashSemiBold: ['ClashSemiBold', 'sans-serif'],
         ClashMedium: ['ClashMedium', 'sans-serif'],
         ClashRegular: ['ClashRegular', 'sans-serif'],
+        InterBold: ['InterBold', 'sans-serif'],
+        InterRegular: ['InterRegular', 'sans-serif'],
+        InterSemiBold: ['InterSemiBold', 'sans-serif'],
+        InterMedium: ['InterMedium', 'sans-serif'],
+        InterLight: ['InterLight', 'sans-serif'],
+        InterThin: ['InterThin', 'sans-serif'],
       },
     },
   },
@@ -27,6 +33,6 @@ module.exports = {
     extend: {
       transform: ['hover', 'focus'],
     },
-  plugins: [],
+    plugins: [],
   },
 }
