@@ -14,6 +14,7 @@ module.exports = {
       },
       colors: {
         'main-purple': '#4517FE',
+        'secondary-purple': '#C896F0',
       },
       fontFamily: {
         ClashBold: ['ClashBold', 'sans-serif'],

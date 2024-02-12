@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 import MagicButton from './magicbutton.js';
 
 export default function Header() {
@@ -17,7 +17,11 @@ export default function Header() {
                 <Link href="/portfolio" passHref><span className={`mx-10 px-2 py-1 ${pathname === '/portfolio' ? 'text-main-purple' : ''} hover:text-main-purple cursor-pointer`}>Newsletter</span></Link>
             </nav>
 
-            <MagicButton />
+            <MagicButton
+                gradientColor="linear-gradient(90deg, #3712cb, #6A45FE)"
+                textColor="#FFFFFF"
+                text="Let's Meet !"
+            />
         </header>
     );
 }
