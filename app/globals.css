@@ -8,7 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   /*========== Colors ==========*/
-  --main-purple: hex(4517fe);
+  --main-purple: #4517fe;
   --black-color: hsl(225, 15%, 6%);
   --reflection-color: hsla(48, 30%, 95%, .3);
   --body-color: hsl(48, 100%, 98%);
@@ -127,6 +127,20 @@ body {
   border: 1px solid var(--black-color);
   color: var(--black-color);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .5rem;
+  overflow: hidden;
+}
+
+.button__content_2 {
+  position: relative;
+  padding: 0.3rem 0.1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--black-color);
+  color: var(--black-color);
+  display: flex;
+  justify-content: center;
   align-items: center;
   column-gap: .5rem;
   overflow: hidden;
@@ -173,7 +187,6 @@ body {
 }
 
 .button__reflection-2::after {
-  content: "";
   width: 40px;
   height: 100%;
   background-color: var(--reflection-color);
@@ -194,7 +207,7 @@ body {
   /* smaller size */
   top: 6px;
   /* adjusted position */
-  left: 1px;
+  left: -4px;
   /* adjusted position */
   transform: rotate(48deg) scale(.1);
 }
@@ -279,7 +292,7 @@ body {
 }
 
 /* View geometric shapes */
-.button:hover {
+.button_rot:hover {
   transform: rotate(-4deg) scale(1.1);
 }
 

@@ -26,8 +26,8 @@ export default function Title() {
     return (
         <div className="relative bg-main-purple flex items-center justify-center overflow-hidden h-screen" >
             {/* Circle/Oval Animation */}
-            <div className="animate-slide-in-right absolute w-96 h-96 bg-no-repeat bg-contain z-10" style={{ backgroundImage: "url('/oval.png')", top: `${180 - 0.9 * scrollPosition}px`, right: `${30 + 0.0055 * scrollPosition ** 2}px` }}></div>
-            <div className="animate-slide-in-right absolute w-64 h-64 bg-no-repeat bg-contain" style={{ backgroundImage: "url('/oval.png')", top: `${510 - 1.1 * scrollPosition}px`, right: `${75 - 0.5 * scrollPosition + 0.0030 * scrollPosition ** 2}px` }}></div>
+            <div className="animate-slide-in-right absolute w-[55vh] h-[55vh] bg-no-repeat bg-contain z-10" style={{ backgroundImage: "url('/oval1.png')", top: `${140 - 0.66 * scrollPosition}px`, right: `${5 + 0.05 * scrollPosition + 0.004 * scrollPosition ** 2}px` }}></div>
+            <div className="animate-slide-in-right absolute w-[32vh] h-[32vh] bg-no-repeat bg-contain" style={{ backgroundImage: "url('/oval2.png')", top: `${500 - 0.88 * scrollPosition}px`, right: `${500 + 0.5 * scrollPosition + 0.003 * scrollPosition ** 2}px` }}></div>
 
             {/* Text Content */}
             <div className="z-10 absolute text-white w-2/3 text-left left-10 bottom-64">
