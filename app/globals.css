@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 
   /*========== Colors ==========*/
+  --main-purple: hex(4517fe);
   --black-color: hsl(225, 15%, 6%);
   --reflection-color: hsla(48, 30%, 95%, .3);
   --body-color: hsl(48, 100%, 98%);
@@ -259,7 +260,6 @@ body {
   top: 0;
   padding: 1rem 2rem;
   border-radius: 4rem;
-  border: 1px solid var(--black-color);
   z-index: -1;
   transition: transform .3s;
 }
